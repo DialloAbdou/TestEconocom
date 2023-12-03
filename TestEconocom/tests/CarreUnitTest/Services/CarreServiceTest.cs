@@ -1,4 +1,5 @@
 ﻿using Carre.Services;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,49 +11,49 @@ namespace CarreUnitTest.Services
 {
     public class CarreServiceTest
     {
+        CarreService carreService;
+        public CarreServiceTest()
+        {
+            carreService = new CarreService();
+        }
 
         [Fact]
         public void GetColorCarre_should_Return_1_If_1_Passed()
         {
-            // Arrange
-              var careService = new CarreService();
             // Act 
-            var result = careService.GetColorCarre(1);
+            var result = carreService.GetColorCarre(1);
             // Assert
-            Assert.Equal("1", result);
+            result.Should().Be("1");
         }
 
         [Fact]
         public void GetColorCarre_should_Return_2_If_2_Passed()
         {
             // Arrange
-            var careService = new CarreService();
             // Act 
-            var result = careService.GetColorCarre(2);
+            var result = carreService.GetColorCarre(2);
             // Assert
-            Assert.Equal("2", result);
+            result.Should().Be("2");
         }
 
         [Fact]
         public void GetColorCarre_should_Return_Verte_If_3_Passed()
         {
             // Arrange
-            var careService = new CarreService();
             // Act 
-            var result = careService.GetColorCarre(3);
+            var result = carreService.GetColorCarre(3);
             // Assert
-            Assert.Equal("Verte", result);
+            result.Should().Be("Verte");
         }
 
         [Fact]
         public void GetColorCarre_should_Return_Bleu_If_5_Passed()
         {
             // Arrange
-            var careService = new CarreService();
             // Act 
-            var result = careService.GetColorCarre(5);
+            var result = carreService.GetColorCarre(5);
             // Assert
-            Assert.Equal("Bleu", result);
+            result.Should().Be("Bleu");
         }
 
 
@@ -60,13 +61,12 @@ namespace CarreUnitTest.Services
         public void GetColorCarre_should_Return_Jaune_If_15_Passed()
         {
             // Arrange
-            var careService = new CarreService();
             // Act 
-            var result = careService.GetColorCarre(15);
+            var result = carreService.GetColorCarre(15);
             // Assert
-            Assert.Equal("Jaune", result);
+            result.Should().Be("Jaune");
         }
 
-    
+
     }
 }
