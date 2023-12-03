@@ -14,21 +14,19 @@ namespace Carre.Services
             {
                 return "Jaune";
             }
+            else if (valeur % 3 == 0)
+            {
+                return "Verte";
+            }
+            else if (valeur % 5 == 0)
+            {
+                return "Bleu";
+            }
             else
             {
-                if (valeur % 3 == 0)
-                {
-                    return "Verte";
-                }
-                else if (valeur % 5 == 0)
-                {
-                    return "Bleu";
-                }
-                else
-                {
-                    return valeur.ToString();
-                }
+                return valeur.ToString();
             }
+
         }
     }
 }
