@@ -8,6 +8,12 @@ namespace Carre.Services
 {
     public class CarreService
     {
+        /// <summary>
+        /// Elle retourne 
+        /// la couleur du Carré
+        /// </summary>
+        /// <param name="valeur"></param>
+        /// <returns></returns>
         public string GetColorCarre(int valeur)
         {
             if (valeur % 3 == 0 && valeur % 5 == 0)
@@ -26,7 +32,12 @@ namespace Carre.Services
             {
                 return valeur.ToString();
             }
+             
+        }
 
+        public List< string> GetColorCarreListe(int max)
+        {
+            throw  new NotImplementedException();
         }
     }
 }
