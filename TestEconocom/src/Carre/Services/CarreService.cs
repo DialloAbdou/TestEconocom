@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace Carre.Services
 {
-    internal class CarreService
+    public class CarreService
     {
+        public string GetColorCarre(int valeur)
+        {
+            if (valeur % 3 == 0 && valeur % 5 == 0)
+            {
+                return "Jaune";
+            }
+            else
+            {
+                if (valeur % 3 == 0)
+                {
+                    return "Verte";
+                }
+                else if (valeur % 5 == 0)
+                {
+                    return "Bleu";
+                }
+                else
+                {
+                    return valeur.ToString();
+                }
+            }
+        }
     }
 }
