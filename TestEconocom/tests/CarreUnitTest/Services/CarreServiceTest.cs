@@ -67,6 +67,16 @@ namespace CarreUnitTest.Services
             result.Should().Be("Jaune");
         }
 
+        [Fact]
+        public void GetColorCarre_should_Return_Expected_If_max_Passed()
+        {
+            // Arrange
+            // Act 
+            var result = carreService.GetListeColorsCarres(15);
+            // Assert
+              result.Should().NotBeEmpty();
+        }
+
 
     }
 }

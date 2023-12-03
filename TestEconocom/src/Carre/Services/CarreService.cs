@@ -35,9 +35,30 @@ namespace Carre.Services
              
         }
 
-        public List< string> GetColorCarreListe(int max)
+        /// <summary>
+        /// elle parcour un maximum d'entier
+        /// en affichant la couleur des differents
+        /// carrés 
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public Dictionary<int, string> GetListeColorsCarres(int max)
         {
-            throw  new NotImplementedException();
+            Dictionary<int, string> listeColorCarres = new Dictionary<int, string>();
+            bool itsOk = false;
+            string valeur = string.Empty;
+            int numbre;
+
+            for(int i= 1; i <= max; i++)
+            {
+                valeur = GetColorCarre(i);
+                itsOk= int.TryParse(valeur, out numbre);    
+                if(!itsOk )
+                {
+                    listeColorCarres.Add(i, valeur);    
+                }
+            }
+            return listeColorCarres;
         }
     }
 }
