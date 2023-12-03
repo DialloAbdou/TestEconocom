@@ -68,7 +68,7 @@ namespace CarreUnitTest.Services
         }
 
         [Fact]
-        public void GetColorCarre_should_Return_Expected_If_max_Passed()
+        public void GetListeColorsCarres_should_Return_NotEmpty_If_max_Passed()
         {
             // Arrange
             // Act 
@@ -77,6 +77,16 @@ namespace CarreUnitTest.Services
               result.Should().NotBeEmpty();
         }
 
+        [Fact]
+        public void GetListeColorsCarres_should_throwArgumentException_When_Max_Is_LowerOrEqual_To_Zero()
+        {
+
+            // Act 
+            Action act = () => carreService.GetListeColorsCarres(-15);
+            // Assert
+            act.Should().Throw<ArgumentException>();    
+        
+        }
 
     }
 }

@@ -44,6 +44,10 @@ namespace Carre.Services
         /// <returns></returns>
         public Dictionary<int, string> GetListeColorsCarres(int max)
         {
+            if(max <= 0)
+            {
+                throw new ArgumentException("doit être supérieur ou égal à 1", nameof(max));
+            }
             Dictionary<int, string> listeColorCarres = new Dictionary<int, string>();
             bool itsOk = false;
             string valeur = string.Empty;
