@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Carre.Services
 {
-    public class CarreService
+    public class CarreService : ICarreService
     {
         /// <summary>
         /// Elle retourne 
@@ -64,5 +64,7 @@ namespace Carre.Services
             }
             return listeColorCarres;
         }
+
+       
     }
 }

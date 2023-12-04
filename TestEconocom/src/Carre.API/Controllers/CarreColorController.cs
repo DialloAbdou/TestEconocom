@@ -6,17 +6,17 @@ namespace Carre.API.Controllers
 {
     public class CarreColorController : Controller
     {
-        private readonly CarreService carreService;
-        public CarreColorController()
+        private readonly ICarreService _carreService;
+        public CarreColorController(ICarreService carreService)
         {
-            carreService = new CarreService();
+            _carreService = carreService;
         }
 
         [HttpGet("{max}")]
         public IActionResult GetColorsCarres(int max)
         {
             Dictionary<int , string> DicoCarrecolors = new Dictionary<int , string>();
-            DicoCarrecolors = carreService.GetListeColorsCarres(max);
+            DicoCarrecolors = _carreService.GetListeColorsCarres(max);
             return Ok(DicoCarrecolors);
         }
 

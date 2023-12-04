@@ -11,17 +11,17 @@ namespace CarreUnitTest.Services
 {
     public class CarreServiceTest
     {
-        CarreService carreService;
+        CarreService _carreService;
         public CarreServiceTest()
         {
-            carreService = new CarreService();
+            _carreService = new CarreService();
         }
 
         [Fact]
         public void GetColorCarre_should_Return_1_If_1_Passed()
         {
             // Act 
-            var result = carreService.GetColorCarre(1);
+            var result = _carreService.GetColorCarre(1);
             // Assert
             result.Should().Be("1");
         }
@@ -31,7 +31,7 @@ namespace CarreUnitTest.Services
         {
             // Arrange
             // Act 
-            var result = carreService.GetColorCarre(2);
+            var result = _carreService.GetColorCarre(2);
             // Assert
             result.Should().Be("2");
         }
@@ -41,7 +41,7 @@ namespace CarreUnitTest.Services
         {
             // Arrange
             // Act 
-            var result = carreService.GetColorCarre(3);
+            var result = _carreService.GetColorCarre(3);
             // Assert
             result.Should().Be("Verte");
         }
@@ -51,7 +51,7 @@ namespace CarreUnitTest.Services
         {
             // Arrange
             // Act 
-            var result = carreService.GetColorCarre(5);
+            var result = _carreService.GetColorCarre(5);
             // Assert
             result.Should().Be("Bleu");
         }
@@ -62,7 +62,7 @@ namespace CarreUnitTest.Services
         {
             // Arrange
             // Act 
-            var result = carreService.GetColorCarre(15);
+            var result = _carreService.GetColorCarre(15);
             // Assert
             result.Should().Be("Jaune");
         }
@@ -72,9 +72,9 @@ namespace CarreUnitTest.Services
         {
             // Arrange
             // Act 
-            var result = carreService.GetListeColorsCarres(15);
+            var result = _carreService.GetListeColorsCarres(15);
             // Assert
-              result.Should().NotBeEmpty();
+            result.Should().NotBeEmpty();
         }
 
         [Fact]
@@ -82,10 +82,10 @@ namespace CarreUnitTest.Services
         {
 
             // Act 
-            Action act = () => carreService.GetListeColorsCarres(-15);
+            Action act = () => _carreService.GetListeColorsCarres(-15);
             // Assert
-            act.Should().Throw<ArgumentException>();    
-        
+            act.Should().Throw<ArgumentException>();
+
         }
 
     }
